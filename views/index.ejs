@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Relationship Builder App</title>
+</head>
+
+<body>
+  <div class="container">
+    <h3 class="text-center">RELATIONSHIP BUILDER APP</h3>
+  </div>
+  <div class="fluid-container d-flex justify-content-center">
+    <div class="left w-25 mt-2 mb-4 ml-4 border p-2 text-center border-right-0 bg-light">
+      <div class="container">
+        <form action="/addToTable" method="post">
+          <h5 class="text-left pt-1">ADD PEOPLE & TAGS</h5>
+          <input type="text" name="personOne" class="personOne form-control mt-2 mb-3" placeholder="Enter First Person's Name">
+          <input type="text" name="personTwo" class="personTwo form-control mb-2" placeholder="Enter Second Person's Name">
+          <div class="form-group text-left">
+            <label for="exampleFormControlSelect1">Select Relationship Tag:</label>
+            <select name="relationShip" class="form-control relationShip" id="exampleFormControlSelect1">
+              <option>Father</option>
+              <option>Mother</option>
+              <option>Brother</option>
+              <option>Sister</option>
+              <option>Uncle</option>
+              <option>Aunt</option>
+              <option>GrandFather</option>
+              <option>GrandMother</option>
+              <option>Nephew</option>
+              <option>Neice</option>
+            </select>
+            <button type="submit" class="btn btn-primary mt-3">Add To Table</button>
+          </div>
+        </form>
+      </div>
+      <div class="fluid-container border mt-2 mb-2">
+
+      </div>
+      <div class="container ">
+        <form action="/updateTags" method="post">
+          <h5 class="text-left pt-1">EDIT & UPDATE TAGS</h5>
+          <input type="text" name="personOne" class="personOne form-control mt-2 mb-3" placeholder="Select First Person From Table">
+          <input type="text" name="personTwo" class="personTwo form-control mb-2" placeholder="Select Second Person From Table">
+          <div class="form-group text-left">
+            <label for="exampleFormControlSelect1">Select Relationship Tag:</label>
+            <select name="relationShip" class="form-control relationShip" id="exampleFormControlSelect1">
+              <option>Father</option>
+              <option>Mother</option>
+              <option>Brother</option>
+              <option>Sister</option>
+              <option>Uncle</option>
+              <option>Aunt</option>
+              <option>GrandFather</option>
+              <option>GrandMother</option>
+              <option>Nephew</option>
+              <option>Neice</option>
+            </select>
+            <button type="submit" class="btn btn-success mt-3">Update Relationship Tags</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="right w-75 mt-2 mb-4 mr-4 border p-2 text-center">
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Person</th>
+              <th scope="col">Relationship Tag</th>
+              <th scope="col">Second Person</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i=0; i<relationShipData.length; i++){ %>
+              <tr>
+                <th scope="row"><%=i+1%></th>
+                <td> <%= relationShipData[i].personOne %> </td>
+                <td> <strong><%= relationShipData[i].relationShip %></strong> </td>
+                <td> <%= relationShipData[i].personTwo %></td>
+              </tr>
+            <%}%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/main.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
