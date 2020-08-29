@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.set("view engine", "ejs");
 
-mongoose.connect("mongodb://localhost:27017/relationShipDB", {
+const DBUrl = process.env.MONGO_URL || "mongodb://localhost:27017/relationShipDB";
+mongoose.connect(DBUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -70,7 +71,7 @@ app.post('/updateTags', (req, res) => {
   res.redirect('/')
 })
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, (req, res) => {
   console.log("yeah port is running...");
 })
