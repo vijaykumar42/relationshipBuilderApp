@@ -11,3 +11,8 @@ use this command to start the local database
 ```
 mongod
 ```
+
+### Check out APP here
+```
+https://relationship-builder-app.herokuapp.com/
+```
