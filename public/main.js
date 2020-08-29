@@ -1,12 +1,11 @@
-const personOne = document.querySelector('.personOne');
-const personTwo = document.querySelector('.personTwo');
-const relationShip = document.querySelector('.relationShip');
+const personOneResult = document.querySelector('.personOneResult');
+const personTwoResult = document.querySelector('.personTwoResult');
 
-// function addToTable(){
+
+// async function showResult(){
 //    const data = {
-//      personOne:personOne.value,
-//      personTwo:personTwo.value,
-//      relationShip:relationShip.value
+//      personOne:personOneResult.value,
+//      personTwo:personTwoResult.value,
 //    }
 //    console.log(data);
 //
@@ -18,7 +17,10 @@ const relationShip = document.querySelector('.relationShip');
 //      body:JSON.stringify(data)
 //    }
 //
-//    fetch('/addToTable', options)
-//    .then(res => res.json())
-//    .then(data => console.log(data))
+//    const response = await fetch('/degreeOfSeperation', options)
+//    const backendData = await res.json()
+//    console.log(backendData);
+//
+//      document.querySelector('.finalOutput').innerHTML = backendData.first;
+//
 // }
